@@ -1,0 +1,166 @@
+.footer {
+	background: #0a0914;
+	padding: 80px 0 40px;
+}
+
+.footer__content {
+	display: grid;
+	gap: 32px;
+}
+
+.footer__logo {
+	width: 140px;
+	height: auto;
+}
+
+.footer__grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 28px;
+}
+
+.footer__column {
+	display: grid;
+	gap: 10px;
+	align-content: start;
+}
+
+.footer__column-title {
+	margin: 0;
+	color: #6852d6;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.footer__column-subtitle {
+	margin: 0;
+	color: rgba(250, 250, 255, 0.54);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.footer__links {
+	display: grid;
+	gap: 8px;
+}
+
+.footer__links a {
+	color: rgba(250, 250, 255, 0.84);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.footer__accordion-trigger {
+	display: none;
+}
+
+.footer__plus {
+	display: none;
+}
+
+.footer__brand-text {
+	margin: 0;
+	font-size: clamp(64px, 10vw, 160px);
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	color: transparent;
+	-webkit-text-stroke: 1px rgba(250, 250, 255, 0.12);
+	text-transform: lowercase;
+	overflow: hidden;
+}
+
+.footer__divider {
+	height: 1px;
+	background: rgba(250, 250, 255, 0.1);
+}
+
+.footer__labels {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.footer__labels-left,
+.footer__labels-right {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.footer__labels-left p,
+.footer__labels-left a,
+.footer__labels-right a {
+	margin: 0;
+	color: rgba(250, 250, 255, 0.74);
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.cometchat-logo-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+@media (max-width: 1024px) {
+	.footer__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.footer__accordion-trigger {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		background: transparent;
+		border: 0;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.footer__plus {
+		display: inline-block;
+		color: #fafaff;
+		font-size: 20px;
+		line-height: 1;
+	}
+
+	.footer__links {
+		display: none;
+	}
+
+	.footer__links.is-open {
+		display: grid;
+	}
+
+	.footer__column-subtitle {
+		display: none;
+	}
+
+	.footer__column-subtitle.is-open {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.footer__brand-text {
+		font-size: clamp(44px, 10vw, 160px);
+	}
+
+	.footer__logo {
+		width: 50px;
+	}
+
+	.footer__content { 
+		gap: 0px;
+	}
+}

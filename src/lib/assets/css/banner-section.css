@@ -1,0 +1,141 @@
+.banner-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 28px;
+	padding-top: 72px;
+}
+
+.banner-section-content-wrapper {
+	display: grid;
+	gap: 16px;
+}
+
+.banner-section-heading-group {
+	display: grid;
+	gap: 12px;
+}
+
+.banner-section-category-label {
+	margin: 0;
+	color: #6852d6;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.06;
+}
+
+.banner-section h2 {
+	margin: 0;
+	color: #fafaff;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.06;
+}
+
+.banner-section-description-text {
+	margin: 0;
+	color: rgba(250, 250, 255, 0.74);
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0.005em;
+}
+
+.banner-section-feature-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 12px;
+}
+
+.banner-section-feature-list li {
+	display: grid;
+	grid-template-columns: 16px minmax(0, 1fr);
+	column-gap: 8px;
+	align-items: start;
+	color: rgba(250, 250, 255, 0.74);
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0.005em;
+}
+
+.banner-section-feature-list img {
+	width: 16px;
+	height: 16px;
+	margin-top: 4px;
+}
+
+.banner-section-image-container {
+	width: 100%;
+	max-width: 640px;
+	height: auto;
+}
+
+.banner-section-image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+#sticky-banner-heading {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	padding-block: 16px;
+	margin: 0;
+	color: #fafaff;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.06;
+	margin-bottom: -260px;
+	margin-left: 95px;
+	font-size: 36px;
+}
+
+#sticky-banner-heading span {
+	background: linear-gradient(180deg, #FFFFFF 0%, #6A55D7 126.95%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+@media (max-width: 1024px) {
+	.banner-section {
+		grid-template-columns: 1fr;
+		gap: 24px;
+		padding-top: 60px;
+	}
+
+	.banner-section-image-container {
+		width: 100%;
+		max-width: 640px;
+		height: auto;
+		aspect-ratio: 1 / 1;
+	}
+
+	.banner-section h2 {
+		font-size: 28px;
+	}
+
+	.banner-section-description-text {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.banner-section-feature-list li {
+		font-size: 14px;
+	}
+
+	.banner-section-category-label {
+		font-size: 18px;
+	}
+
+	#sticky-banner-heading {
+		position: static;
+		margin-bottom: 0px;
+		margin-left: 0px;
+	}
+}

@@ -1,0 +1,137 @@
+.plug-logic-section {
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+.plug-logic-section-title-block {
+	display: grid;
+	justify-items: center;
+	gap: 12px;
+	text-align: center;
+}
+
+.plug-logic-section-title-block img {
+	width: min(100%, 1090px);
+	height: auto;
+}
+
+.plug-logic-section h2 {
+	margin: 0;
+	font-size: 48px;
+	line-height: 1.06;
+	font-weight: 600;
+	color: #fafaff;
+}
+
+.plug-logic-section-title-block p {
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.2;
+	letter-spacing: 0.005em;
+	color: rgba(250, 250, 255, 0.74);
+}
+
+.plug-logic-section-card-grid {
+	margin-top: 48px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 32px;
+}
+
+.plug-logic-section-card {
+	border: 1px solid rgba(250, 250, 255, 0.2);
+	border-radius: 24px;
+	background: #0a0914;
+	overflow: hidden;
+}
+
+.plug-logic-section-card-content {
+	padding: 32px;
+	display: grid;
+	gap: 16px;
+}
+
+.plug-logic-section-card-icon {
+	width: 64px;
+	height: 64px;
+}
+
+.plug-logic-section h3 {
+	margin: 0;
+	font-size: 24px;
+	line-height: 1.06;
+	font-weight: 640;
+	color: #fafaff;
+}
+
+.plug-logic-section ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 12px;
+}
+
+.plug-logic-section li {
+	display: grid;
+	grid-template-columns: 16px minmax(0, 1fr);
+	gap: 8px;
+	align-items: start;
+}
+
+.plug-logic-section li img {
+	width: 16px;
+	height: 16px;
+	margin-top: 4px;
+}
+
+.plug-logic-section li span {
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: 0.005em;
+	color: rgba(250, 250, 255, 0.74);
+}
+
+.plug-logic-section a {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.11;
+	color: #6852d6;
+}
+
+.plug-logic-section-tree-illustration {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+@media (max-width: 1024px) {
+	.plug-logic-section-card-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.plug-logic-section h2 {
+		font-size: 32px;
+	}
+
+	.plug-logic-section-title-block p {
+		font-size: 16px;
+	}
+
+	.plug-logic-section h3 {
+		font-size: 18px;
+
+	}
+
+	.plug-logic-section-card-content {
+		padding: 16px;
+	}
+
+	.plug-logic-section-card-icon {
+		width: 50px;
+		height: 50px;
+	}
+	.plug-logic-section li span {
+		font-size: 14px;
+	}
+}
