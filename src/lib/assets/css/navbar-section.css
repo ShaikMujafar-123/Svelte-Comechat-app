@@ -73,7 +73,7 @@
 }
 @media (max-width: 1024px) {
 	.site-header-inner {
-		padding-inline: 16px;
+		padding-inline: 0px;
 	}
 	.primary-navigation,
 	.header-actions {
