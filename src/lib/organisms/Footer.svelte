@@ -1,66 +1,8 @@
 <script lang="ts">
-	import { resolve } from "$app/paths";
+	import type { FooterBlok } from '$lib/types/storyblok';
 	import "$lib/assets/css/footer-section.css";
 
-	const columns = [
-		{
-			title: "Platform",
-			subtitle: "Features",
-			links: [
-				"Chat & Messaging",
-				"Voice & Video Calls",
-				"Notifications",
-				"Analytics & Insights",
-				"Multi-Tenant Chat",
-				"UI Kits",
-				"SDKs & APIs",
-			],
-		},
-		{
-			title: "Solutions",
-			subtitle: "By use case",
-			links: [
-				"On-demand",
-				"Online Marketplaces",
-				"SaaS Businesses",
-				"Healthcare & Telehealth",
-				"Community & Social",
-				"Dating",
-				"CometChat vs Sendbird",
-				"Compare Top Chat SDKs",
-			],
-		},
-		{
-			title: "Developers",
-			subtitle: "Documentation",
-			links: [
-				"Docs",
-				"Sample Apps",
-				"APIs",
-				"Product Updates",
-				"Feature Requests",
-				"System Status",
-				"Community",
-				"Help Center",
-			],
-		},
-		{
-			title: "Company",
-			subtitle: "Terms and Legal",
-			links: [
-				"Careers",
-				"Partners",
-				"Pricing",
-				"Implementation Services",
-				"Chat with us",
-				"Terms of Service",
-				"Privacy Policy",
-				"Data Processing Addendum",
-			],
-		},
-	];
-
-	const social = ["Facebook", "LinkedIn", "Instagram", "Twitter", "GitHub"];
+	let { data }: { data: FooterBlok } = $props();
 
 	let openSections = $state(new Set<string>());
 
@@ -82,7 +24,7 @@
 		</div>
 
 		<div class="footer__grid">
-			{#each columns as col (col.title)}
+			{#each data.columns as col (col.title)}
 				<section class="footer__column">
 					<button
 						type="button"
@@ -101,8 +43,8 @@
 						class="footer__links {openSections.has(col.title) ? 'is-open' : ''}"
 						id={`footer-links-${col.title}`}
 					>
-						{#each col.links as link (link)}
-							<a href={resolve("/")}>{link}</a>
+						{#each col.links as link (link.label)}
+							<a href={link.url}>{link.label}</a>
 						{/each}
 					</div>
 				</section>
@@ -126,12 +68,12 @@
 		<div class="footer__labels">
 			<div class="footer__labels-left">
 				<p>2025 © CometChat</p>
-				<a href={resolve("/")}>Terms of Use</a>
-				<a href={resolve("/")}>Privacy Policy</a>
+				<a href="/legal/terms">Terms of Use</a>
+				<a href="/legal/privacy">Privacy Policy</a>
 			</div>
 			<div class="footer__labels-right">
-				{#each social as item (item)}
-					<a href={resolve("/")}>{item}</a>
+				{#each data.social_links as item (item.label)}
+					<a href={item.url} target="_blank" rel="noopener noreferrer">{item.label}</a>
 				{/each}
 			</div>
 		</div>

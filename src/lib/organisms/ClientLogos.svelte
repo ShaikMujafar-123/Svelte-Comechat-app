@@ -1,13 +1,8 @@
 <script lang="ts">
+	import type { ClientLogosBlok } from '$lib/types/storyblok';
 	import '$lib/assets/css/client-logos-section.css';
 
-	const logos = [
-		{ src: '/images/haleon-seeklogo.com.svg', alt: 'Client logos group 1' },
-		{ src: '/images/kahoot-seeklogo.com.svg', alt: 'Client logos group 2' },
-		{ src: '/images/shaadi-seeklogo.com.svg', alt: 'Client logos group 2' },
-		{ src: '/images/endeavor.svg', alt: 'Client logos group 2' },
-		{ src: '/images/nb_logo_new_trans.svg', alt: 'Client logos group 2' }
-	];
+	let { data }: { data: ClientLogosBlok } = $props();
 </script>
 
 <div class="client-logos-wrapper">
@@ -20,14 +15,14 @@
 
 			<div class="client-logos__track">
 				{#each { length: 2 } as _}
-					{#each logos as logo}
-						<img src={logo.src} alt={logo.alt} width="150" height="32" loading="lazy" />
+					{#each data.logos as logo}
+						<img src={logo.filename} alt={logo.alt} width="150" height="32" loading="lazy" />
 					{/each}
 				{/each}
 			</div>
 
 			<div class="client-logos__overlay">
-				<a href="/" class="client-logos__cta">Check our amazing customer stories</a>
+				<a href="/" class="client-logos__cta">{data.cta_text}</a>
 			</div>
 		</div>
 	</section>

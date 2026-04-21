@@ -1,18 +1,15 @@
 <script lang="ts">
-	import type { BannerData } from '$lib/data/bannerData';
+	import type { BannerBlok } from '$lib/types/storyblok';
 	import '$lib/assets/css/banner-section.css';
 
-	let { data, index = -1 }: { data: BannerData; index?: number } = $props();
+	let { data, index = -1 }: { data: BannerBlok; index?: number } = $props();
 </script>
 
 {#if index === 1}
 	<h2 id="sticky-banner-heading" class="container">Everything you'd end up <br /><span>already done.</span></h2>
 {/if}
 
-<section
-	class="banner-section container"
-	aria-label={data.label || data.heading}
->
+<section class="banner-section container" aria-label={data.label}>
 	<div class="banner-section-content-wrapper">
 		<div class="banner-section-heading-group">
 			<p class="banner-section-category-label">{data.label}</p>
@@ -35,6 +32,6 @@
 	</div>
 
 	<div class="banner-section-image-container">
-		<img src={data.image.src} alt={data.image.alt} width="640" height="640" loading="lazy" />
+		<img src={data.image.filename} alt={data.image.alt} width="640" height="640" loading="lazy" />
 	</div>
 </section>

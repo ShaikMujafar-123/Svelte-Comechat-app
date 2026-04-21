@@ -1,20 +1,21 @@
 <script lang="ts">
+	import type { NavbarBlok } from '$lib/types/storyblok';
 	import Button from '$lib/atoms/Button.svelte';
 	import NavLink from '$lib/atoms/NavLink.svelte';
 	import '$lib/assets/css/navbar-section.css';
 
+	let { data }: { data: NavbarBlok } = $props();
 	let open = $state(false);
-	const links = ['Platform', 'Solutions', 'Developers', 'Resources', 'Pricing'];
 </script>
 
 <header class="site-header">
 	<div class="site-header-inner">
 		<a href="/" aria-label="CometChat home">
-			<img src="/images/logo-cometchat.svg" alt="CometChat logo" width="129" height="20" />
+			<img src={data.logo.filename} alt={data.logo.alt} width="129" height="20" />
 		</a>
 		<nav class="primary-navigation" aria-label="Primary">
-			{#each links as link (link)}
-				<NavLink label={link} />
+			{#each data.links as link (link.label)}
+				<NavLink label={link.label} href={link.url} />
 			{/each}
 		</nav>
 		<div class="header-actions">
@@ -47,8 +48,8 @@
 		class={`mobile-drawer ${open ? 'mobile-drawer-visible' : ''}`}
 		aria-label="Mobile navigation"
 	>
-		{#each links as link (link)}
-			<NavLink label={link} />
+		{#each data.links as link (link.label)}
+			<NavLink label={link.label} href={link.url} />
 		{/each}
 		<div class="mobile-drawer-actions">
 			<NavLink label="Log in" />
