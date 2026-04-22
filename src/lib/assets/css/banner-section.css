@@ -86,12 +86,12 @@
 	z-index: 10;
 	padding-block: 16px;
 	margin: 0;
+	margin-inline: auto;
 	color: #fafaff;
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 1.06;
 	margin-bottom: -260px;
-	margin-left: 95px;
 	font-size: 36px;
 }
 
